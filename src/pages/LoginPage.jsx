@@ -286,7 +286,7 @@ export default function LoginPage({ onLogin, logoutAlert, onClearLogoutAlert, br
                 color: '#111827',
                 letterSpacing: '-0.01em'
               }}>
-                {currentBranding?.companyName || 'TA-DA Portal'}
+                {currentBranding?.companyName || 'MIS TA-DA Portal'}
               </h2>
               <p style={{
                 margin: 0,
@@ -294,7 +294,7 @@ export default function LoginPage({ onLogin, logoutAlert, onClearLogoutAlert, br
                 fontSize: '0.84rem',
                 fontWeight: 500
               }}>
-                {currentBranding?.companySubtitle || 'Enterprise Management Information System'}
+                {currentBranding?.companySubtitle || 'Pee Cee Cosma Pvt. Ltd'}
               </p>
             </div>
 

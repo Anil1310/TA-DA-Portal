@@ -1,14 +1,6 @@
 # 🚀 TA-DA Portal — Enterprise Management Information System
 
-*Auto-generated on: 19/11/2026, 3:32:00 pm (IST)*
-
----
-
-## 🌐 24/7 CLOUD HOSTING (GitHub Pages)
-| Resource | URL | Description |
-| :--- | :--- | :--- |
-| 🚀 **Live GitHub Web App** | [https://anil1310.github.io/TA-DA-Portal/](https://anil1310.github.io/TA-DA-Portal/) | Hosted globally on GitHub CDN |
-| 📦 **GitHub Repository** | [https://github.com/Anil1310/TA-DA-Portal](https://github.com/Anil1310/TA-DA-Portal) | Source code & deployment pipelines |
+*Auto-generated on: 19/11/2026, 4:03:36 pm (IST)*
 
 ---
 

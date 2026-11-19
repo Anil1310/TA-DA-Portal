@@ -1,6 +1,7 @@
 /**
  * Data storage and Google Apps Script integration service
  */
+import { DEFAULT_DOCTOR_SOAP_LOGO } from './defaultLogo';
 
 const STORAGE_KEYS = {
   CLAIMS: 'bharti_ta_claims_v8_consolidated_amounts',
@@ -493,9 +494,9 @@ export const DEFAULT_PERMISSIONS = {
 
 const BRANDING_STORAGE_KEY = 'ta_portal_branding_v2';
 export const DEFAULT_BRANDING = {
-  companyName: 'TA-DA Portal',
-  companySubtitle: 'Enterprise MIS',
-  logoUrl: '' // Base64 or image URL
+  companyName: 'MIS TA-DA Portal',
+  companySubtitle: 'Pee Cee Cosma Pvt. Ltd',
+  logoUrl: DEFAULT_DOCTOR_SOAP_LOGO
 };
 
 export function getStoredBranding() {
@@ -506,7 +507,7 @@ export function getStoredBranding() {
   return {
     companyName: saved.companyName || DEFAULT_BRANDING.companyName,
     companySubtitle: saved.companySubtitle || DEFAULT_BRANDING.companySubtitle,
-    logoUrl: saved.logoUrl || ''
+    logoUrl: saved.logoUrl || DEFAULT_BRANDING.logoUrl
   };
 }
 
