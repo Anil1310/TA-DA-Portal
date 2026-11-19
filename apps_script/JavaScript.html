@@ -1,0 +1,13 @@
+<script>
+  // Modular client-side JavaScript helper for Google Apps Script
+  console.log('Bharti TA Expense Portal loaded.');
+  
+  function executeServerCall(funcName, params, onSuccess, onFailure) {
+    if (window.google && window.google.script && window.google.script.run) {
+      const runner = window.google.script.run
+        .withSuccessHandler(onSuccess)
+        .withFailureHandler(onFailure || function(err) { console.error('Server error:', err); });
+      runner[funcName](params);
+    }
+  }
+</script>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TA - DA Expenses State-wise Costing Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 24px;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1.5px solid #005bb5;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 91, 181, 0.08);
+    }
+    .header-bar {
+      background: #005bb5;
+      color: #ffffff;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .header-bar h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+    .header-bar p {
+      font-size: 0.82rem;
+      color: #bfdbfe;
+      margin-top: 4px;
+    }
+    .btn {
+      background: #ffffff;
+      color: #005bb5;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+    .table-container {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+    th {
+      background: #0066cc;
+      color: #ffffff;
+      padding: 12px 10px;
+      font-weight: 800;
+      border: 1px solid #005bb5;
+      text-align: center;
+      white-space: nowrap;
+    }
+    td {
+      padding: 10px 10px;
+      border-right: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+      white-space: nowrap;
+      text-align: center;
+    }
+    tr:nth-child(even) td {
+      background: #f0f7ff;
+    }
+    td.num {
+      text-align: center;
+    }
+    td.highlight-col {
+      background: #eff6ff !important;
+      font-weight: 800;
+      color: #005bb5;
+    }
+    td.grand-col {
+      background: #dbeafe !important;
+      font-weight: 900;
+      color: #005bb5;
+    }
+    tfoot tr {
+      background: #0f172a !important;
+      color: #ffffff;
+      font-weight: 800;
+    }
+    tfoot td {
+      padding: 14px 10px;
+      border: none;
+      color: #ffffff;
+      text-align: center;
+    }
+    tfoot td.grand-total {
+      background: #0284c7 !important;
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header-bar">
+      <div>
+        <h1>TA - DA Expenses State-wise Costing Report</h1>
+        <p>Official State-wise Matrix matching Provisional Costing Statement</p>
+      </div>
+      <div>
+        <a href="?view=main" class="btn">Back to Main Portal</a>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>TA - DA Expenses</th>
+            <th style="background:#0055b3;">Total</th>
+            <th>MP</th>
+            <th>CG</th>
+            <th>HARYANA</th>
+            <th>MEGALAYA</th>
+            <th>BIHAR</th>
+            <th>JHARKHAND</th>
+            <th>DELHI</th>
+            <th>UP</th>
+            <th>UK</th>
+            <th>RAJ</th>
+            <th>PUNJAB</th>
+            <th>GUJRAT</th>
+            <th style="background:#004c9e;">TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align:center; font-weight:700;">Apr</td>
+            <td style="text-align:center;">TA-Bills</td>
+            <td class="num highlight-col">1,282,992</td>
+            <td class="num">136,879</td><td class="num">0</td><td class="num">68,038</td><td class="num">0</td><td class="num">54,858</td><td class="num">49,940</td><td class="num">124,082</td><td class="num">271,476</td><td class="num">34,350</td><td class="num">448,380</td><td class="num">49,032</td><td class="num">45,957</td>
+            <td class="num grand-col">1,282,992</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; font-weight:700;">May</td>
+            <td style="text-align:center;">TA-Bills</td>
+            <td class="num highlight-col">1,246,460</td>
+            <td class="num">160,935</td><td class="num">0</td><td class="num">69,525</td><td class="num">0</td><td class="num">57,380</td><td class="num">43,983</td><td class="num">71,110</td><td class="num">227,753</td><td class="num">39,001</td><td class="num">479,916</td><td class="num">48,982</td><td class="num">47,875</td>
+            <td class="num grand-col">1,246,460</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; font-weight:700;">Jun</td>
+            <td style="text-align:center;">TA-Bills</td>
+            <td class="num highlight-col">1,257,674</td>
+            <td class="num">137,841</td><td class="num">0</td><td class="num">80,265</td><td class="num">0</td><td class="num">54,398</td><td class="num">20,312</td><td class="num">89,558</td><td class="num">256,342</td><td class="num">47,643</td><td class="num">494,533</td><td class="num">42,286</td><td class="num">34,495</td>
+            <td class="num grand-col">1,257,674</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; font-weight:700;">Jul</td>
+            <td style="text-align:center;">TA-Bills</td>
+            <td class="num highlight-col">1,338,900</td>
+            <td class="num">171,747</td><td class="num">0</td><td class="num">82,711</td><td class="num">0</td><td class="num">51,383</td><td class="num">6,893</td><td class="num">77,180</td><td class="num">307,269</td><td class="num">44,636</td><td class="num">520,563</td><td class="num">49,438</td><td class="num">27,080</td>
+            <td class="num grand-col">1,338,900</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; font-weight:700;">Aug</td>
+            <td style="text-align:center;">TA-Bills</td>
+            <td class="num highlight-col">1,150,355</td>
+            <td class="num">155,511</td><td class="num">0</td><td class="num">81,663</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">78,120</td><td class="num">275,145</td><td class="num">33,691</td><td class="num">494,949</td><td class="num">31,276</td><td class="num">0</td>
+            <td class="num grand-col">1,150,355</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td style="text-align:center;">TOTAL</td>
+            <td style="text-align:center; color:#cbd5e1;">TA-Bills</td>
+            <td class="num" style="color:#93c5fd; font-size:0.96rem;">6,276,381</td>
+            <td class="num">762,913</td><td class="num">0</td><td class="num">382,202</td><td class="num">0</td><td class="num">218,019</td><td class="num">121,128</td><td class="num">440,050</td><td class="num">1,337,985</td><td class="num">199,321</td><td class="num">2,438,341</td><td class="num">221,014</td><td class="num">155,407</td>
+            <td class="num grand-total">6,276,381</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>

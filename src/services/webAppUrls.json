@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-11-19T09:49:59.808Z",
+  "primary": {
+    "name": "Link-1 / MIS Admin & Bharti Portal",
+    "scriptId": "1ouE8kYLKAbIi4vklT0v0uCOTJKG2UTeuhqaBpCc_dNJlDM1jdtzJYvCA",
+    "deploymentId": "AKfycbzVFMEJbzicH-8Euoe2k12ZizgFuGA1C6B7T9tZo9Y8yBGME0DWVGsyGW1cd9CHJkew",
+    "devUrlDoctorSoap": "https://script.google.com/a/macros/doctorsoap.com/s/1ouE8kYLKAbIi4vklT0v0uCOTJKG2UTeuhqaBpCc_dNJlDM1jdtzJYvCA/dev",
+    "devUrlStandard": "https://script.google.com/macros/s/1ouE8kYLKAbIi4vklT0v0uCOTJKG2UTeuhqaBpCc_dNJlDM1jdtzJYvCA/dev",
+    "execUrl": "https://script.google.com/macros/s/AKfycbzVFMEJbzicH-8Euoe2k12ZizgFuGA1C6B7T9tZo9Y8yBGME0DWVGsyGW1cd9CHJkew/exec",
+    "sheetUrl": "https://docs.google.com/spreadsheets/d/1VkrqI6qCWhfLcPQcigJEQE9jkTwdbHkVVTGre0pHhDY/edit"
+  },
+  "secondary": {
+    "name": "Link-2 / Bhawna Portal (Rajasthan, Bihar, Jharkhand, Gujarat)",
+    "scriptId": "1dDw7A2kMdHQYwKcK_FqwDhqIM6btoDZHtOdhZpJOMeAohBLsXLs7TB-M",
+    "deploymentId": "AKfycbz8epB3cpne2BJDxX57tGV7hpcMCAR4tOkmIctQkeYYGI1cuVKCbA1Ws_dgMBuroIdphA",
+    "devUrlDoctorSoap": "https://script.google.com/a/macros/doctorsoap.com/s/1dDw7A2kMdHQYwKcK_FqwDhqIM6btoDZHtOdhZpJOMeAohBLsXLs7TB-M/dev",
+    "devUrlStandard": "https://script.google.com/macros/s/1dDw7A2kMdHQYwKcK_FqwDhqIM6btoDZHtOdhZpJOMeAohBLsXLs7TB-M/dev",
+    "execUrl": "https://script.google.com/macros/s/AKfycbz8epB3cpne2BJDxX57tGV7hpcMCAR4tOkmIctQkeYYGI1cuVKCbA1Ws_dgMBuroIdphA/exec",
+    "sheetUrl": "https://docs.google.com/spreadsheets/d/166GBY-ACppPT9vFccLK1UJFKzO4KxeTGXxpUSMsrG5w/edit"
+  }
+}
