@@ -14,7 +14,7 @@ const DEFAULT_CONFIG = {
   spreadsheetId: '1VkrqI6qCWhfLcPQcigJEQE9jkTwdbHkVVTGre0pHhDY',
   secondarySpreadsheetId: '166GBY-ACppPT9vFccLK1UJFKzO4KxeTGXxpUSMsrG5w',
   spreadsheetIds: ['1VkrqI6qCWhfLcPQcigJEQE9jkTwdbHkVVTGre0pHhDY', '166GBY-ACppPT9vFccLK1UJFKzO4KxeTGXxpUSMsrG5w'],
-  appsScriptUrl: 'https://script.google.com/macros/s/AKfycbzQtdOTtSIsBr_wQupfcB9c3s2DIC_AQJRSJpno1ec/exec',
+  appsScriptUrl: 'https://script.google.com/macros/s/AKfycbzVFMEJbzicH-8Euoe2k12ZizgFuGA1C6B7T9tZo9Y8yBGME0DWVGsyGW1cd9CHJkew/exec',
   // Supabase Database Integration Settings
   supabaseEnabled: false,
   supabaseUrl: '',
