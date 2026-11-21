@@ -914,11 +914,21 @@ html, body {
   }
 }
 
+@keyframes spinContinuous {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.action-spinner-active,
 .spin-animation,
 .animate-spin {
-  animation: spin 0.85s linear infinite !important;
-  display: inline-block;
-  transform-origin: center center;
+  display: inline-flex !important;
+  animation: spin 0.75s linear infinite !important;
+  transform-origin: 50% 50% !important;
 }
 
 

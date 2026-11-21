@@ -64,7 +64,7 @@ const ALL_12_MONTHS = [
 function ActionSpinner({ isRunning, size = 16, color }) {
   return (
     <span
-      className={isRunning ? "action-spinner-active" : ""}
+      className={isRunning ? "action-spinner-active spin-animation" : ""}
       style={{
         display: 'inline-flex',
         alignItems: 'center',
@@ -72,7 +72,7 @@ function ActionSpinner({ isRunning, size = 16, color }) {
         width: `${size}px`,
         height: `${size}px`,
         lineHeight: 1,
-        animation: isRunning ? 'spinContinuous 0.75s linear infinite' : 'none',
+        animation: isRunning ? 'spin 0.75s linear infinite' : 'none',
         transformOrigin: '50% 50%',
         flexShrink: 0
       }}
