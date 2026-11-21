@@ -408,7 +408,7 @@ export default function Automation({ config, showToast, user }) {
             borderRadius: '12px',
             fontSize: '1rem',
             fontWeight: 800,
-            cursor: runningAction !== null ? 'not-allowed' : 'pointer',
+            cursor: runningAction !== null ? (runningAction === 'runFullAutomation' ? 'wait' : 'not-allowed') : 'pointer',
             display: 'inline-flex',
             alignItems: 'center',
             gap: '10px',
@@ -416,17 +416,12 @@ export default function Automation({ config, showToast, user }) {
             transition: 'all 0.15s ease'
           }}
         >
-          {runningAction === 'runFullAutomation' ? (
-            <>
-              <RefreshCw size={20} className="spin-animation" />
-              Running Pipeline...
-            </>
-          ) : (
-            <>
-              <Play size={20} fill="#ffffff" />
-              Run Full Automation Now
-            </>
-          )}
+          <RefreshCw 
+            size={20} 
+            className={runningAction === 'runFullAutomation' ? "spin-animation" : ""} 
+            style={runningAction === 'runFullAutomation' ? { animation: 'spin 0.85s linear infinite' } : {}}
+          />
+          {runningAction === 'runFullAutomation' ? 'Running Full Pipeline...' : 'Run Full Automation Now'}
         </button>
       </div>
 
@@ -457,10 +452,23 @@ export default function Automation({ config, showToast, user }) {
             disabled={runningAction !== null}
             onClick={() => handleRunAutomation('combineMaster', 'Combine Data to Master')}
             className="btn btn-secondary"
-            style={{ width: '100%', justifyContent: 'center', fontWeight: 700 }}
+            style={{
+              width: '100%',
+              justifyContent: 'center',
+              fontWeight: 700,
+              gap: '8px',
+              backgroundColor: runningAction === 'combineMaster' ? '#dbeafe' : undefined,
+              borderColor: runningAction === 'combineMaster' ? '#2563eb' : undefined,
+              color: runningAction === 'combineMaster' ? '#1d4ed8' : undefined,
+              cursor: runningAction !== null ? (runningAction === 'combineMaster' ? 'wait' : 'not-allowed') : 'pointer'
+            }}
           >
-            {runningAction === 'combineMaster' ? <RefreshCw size={16} className="spin-animation" /> : <Play size={16} />}
-            Run Consolidation
+            <RefreshCw 
+              size={16} 
+              className={runningAction === 'combineMaster' ? "spin-animation" : ""} 
+              style={runningAction === 'combineMaster' ? { animation: 'spin 0.85s linear infinite' } : {}}
+            />
+            {runningAction === 'combineMaster' ? 'Consolidating to Master...' : 'Run Consolidation'}
           </button>
         </div>
 
@@ -484,10 +492,23 @@ export default function Automation({ config, showToast, user }) {
             disabled={runningAction !== null}
             onClick={() => handleRunAutomation('fixStates', 'Fix State Names in Master')}
             className="btn btn-secondary"
-            style={{ width: '100%', justifyContent: 'center', fontWeight: 700 }}
+            style={{
+              width: '100%',
+              justifyContent: 'center',
+              fontWeight: 700,
+              gap: '8px',
+              backgroundColor: runningAction === 'fixStates' ? '#f3e8ff' : undefined,
+              borderColor: runningAction === 'fixStates' ? '#7e22ce' : undefined,
+              color: runningAction === 'fixStates' ? '#6b21a8' : undefined,
+              cursor: runningAction !== null ? (runningAction === 'fixStates' ? 'wait' : 'not-allowed') : 'pointer'
+            }}
           >
-            {runningAction === 'fixStates' ? <RefreshCw size={16} className="spin-animation" /> : <Play size={16} />}
-            Normalize State Column
+            <RefreshCw 
+              size={16} 
+              className={runningAction === 'fixStates' ? "spin-animation" : ""} 
+              style={runningAction === 'fixStates' ? { animation: 'spin 0.85s linear infinite' } : {}}
+            />
+            {runningAction === 'fixStates' ? 'Normalizing State Column...' : 'Normalize State Column'}
           </button>
         </div>
 
@@ -511,10 +532,23 @@ export default function Automation({ config, showToast, user }) {
             disabled={runningAction !== null}
             onClick={() => handleRunAutomation('formatCalibri', 'Apply Calibri 10 & Middle Alignment')}
             className="btn btn-secondary"
-            style={{ width: '100%', justifyContent: 'center', fontWeight: 700 }}
+            style={{
+              width: '100%',
+              justifyContent: 'center',
+              fontWeight: 700,
+              gap: '8px',
+              backgroundColor: runningAction === 'formatCalibri' ? '#ecfdf5' : undefined,
+              borderColor: runningAction === 'formatCalibri' ? '#047857' : undefined,
+              color: runningAction === 'formatCalibri' ? '#065f46' : undefined,
+              cursor: runningAction !== null ? (runningAction === 'formatCalibri' ? 'wait' : 'not-allowed') : 'pointer'
+            }}
           >
-            {runningAction === 'formatCalibri' ? <RefreshCw size={16} className="spin-animation" /> : <Play size={16} />}
-            Apply Calibri 10 Styling
+            <RefreshCw 
+              size={16} 
+              className={runningAction === 'formatCalibri' ? "spin-animation" : ""} 
+              style={runningAction === 'formatCalibri' ? { animation: 'spin 0.85s linear infinite' } : {}}
+            />
+            {runningAction === 'formatCalibri' ? 'Applying Calibri 10 Styling...' : 'Apply Calibri 10 Styling'}
           </button>
         </div>
 
@@ -538,10 +572,23 @@ export default function Automation({ config, showToast, user }) {
             disabled={runningAction !== null}
             onClick={() => handleRunAutomation('updateSums', 'Recalculate State Sums & Totals')}
             className="btn btn-secondary"
-            style={{ width: '100%', justifyContent: 'center', fontWeight: 700 }}
+            style={{
+              width: '100%',
+              justifyContent: 'center',
+              fontWeight: 700,
+              gap: '8px',
+              backgroundColor: runningAction === 'updateSums' ? '#fef3c7' : undefined,
+              borderColor: runningAction === 'updateSums' ? '#b45309' : undefined,
+              color: runningAction === 'updateSums' ? '#92400e' : undefined,
+              cursor: runningAction !== null ? (runningAction === 'updateSums' ? 'wait' : 'not-allowed') : 'pointer'
+            }}
           >
-            {runningAction === 'updateSums' ? <RefreshCw size={16} className="spin-animation" /> : <Play size={16} />}
-            Update Formulas & Totals
+            <RefreshCw 
+              size={16} 
+              className={runningAction === 'updateSums' ? "spin-animation" : ""} 
+              style={runningAction === 'updateSums' ? { animation: 'spin 0.85s linear infinite' } : {}}
+            />
+            {runningAction === 'updateSums' ? 'Updating Formulas & Totals...' : 'Update Formulas & Totals'}
           </button>
         </div>
 
@@ -565,10 +612,23 @@ export default function Automation({ config, showToast, user }) {
             disabled={runningAction !== null}
             onClick={() => handleRunAutomation('formatDates', 'Format Column H Dates')}
             className="btn btn-secondary"
-            style={{ width: '100%', justifyContent: 'center', fontWeight: 700 }}
+            style={{
+              width: '100%',
+              justifyContent: 'center',
+              fontWeight: 700,
+              gap: '8px',
+              backgroundColor: runningAction === 'formatDates' ? '#e0f2fe' : undefined,
+              borderColor: runningAction === 'formatDates' ? '#0369a1' : undefined,
+              color: runningAction === 'formatDates' ? '#075985' : undefined,
+              cursor: runningAction !== null ? (runningAction === 'formatDates' ? 'wait' : 'not-allowed') : 'pointer'
+            }}
           >
-            {runningAction === 'formatDates' ? <RefreshCw size={16} className="spin-animation" /> : <Play size={16} />}
-            Standardize Dates
+            <RefreshCw 
+              size={16} 
+              className={runningAction === 'formatDates' ? "spin-animation" : ""} 
+              style={runningAction === 'formatDates' ? { animation: 'spin 0.85s linear infinite' } : {}}
+            />
+            {runningAction === 'formatDates' ? 'Standardizing Dates...' : 'Standardize Dates'}
           </button>
         </div>
 
@@ -621,10 +681,23 @@ export default function Automation({ config, showToast, user }) {
             disabled={runningAction !== null || !newMonthName.trim()}
             onClick={() => handleRunAutomation('createMonth', `Create Month "${newMonthName}"`, { sourceMonth, newMonth: newMonthName })}
             className="btn btn-secondary"
-            style={{ width: '100%', justifyContent: 'center', fontWeight: 700 }}
+            style={{
+              width: '100%',
+              justifyContent: 'center',
+              fontWeight: 700,
+              gap: '8px',
+              backgroundColor: runningAction === 'createMonth' ? '#fee2e2' : undefined,
+              borderColor: runningAction === 'createMonth' ? '#b91c1c' : undefined,
+              color: runningAction === 'createMonth' ? '#991b1b' : undefined,
+              cursor: runningAction !== null ? (runningAction === 'createMonth' ? 'wait' : 'not-allowed') : 'pointer'
+            }}
           >
-            {runningAction === 'createMonth' ? <RefreshCw size={16} className="spin-animation" /> : <Play size={16} />}
-            Create "{newMonthName}" Sheet
+            <RefreshCw 
+              size={16} 
+              className={runningAction === 'createMonth' ? "spin-animation" : ""} 
+              style={runningAction === 'createMonth' ? { animation: 'spin 0.85s linear infinite' } : {}}
+            />
+            {runningAction === 'createMonth' ? `Creating "${newMonthName}" Sheet...` : `Create "${newMonthName}" Sheet`}
           </button>
         </div>
 
@@ -676,10 +749,27 @@ export default function Automation({ config, showToast, user }) {
             disabled={runningAction !== null || !lockMonth.trim()}
             onClick={() => handleRunAutomation('toggleLock', `${isLocking ? 'Lock' : 'Unlock'} Month "${lockMonth}"`, { month: lockMonth, lock: isLocking })}
             className="btn btn-secondary"
-            style={{ width: '100%', justifyContent: 'center', fontWeight: 700 }}
+            style={{
+              width: '100%',
+              justifyContent: 'center',
+              fontWeight: 700,
+              gap: '8px',
+              backgroundColor: runningAction === 'toggleLock' ? '#fef3c7' : undefined,
+              borderColor: runningAction === 'toggleLock' ? '#d97706' : undefined,
+              color: runningAction === 'toggleLock' ? '#92400e' : undefined,
+              cursor: runningAction !== null ? (runningAction === 'toggleLock' ? 'wait' : 'not-allowed') : 'pointer'
+            }}
           >
-            {runningAction === 'toggleLock' ? <RefreshCw size={16} className="spin-animation" /> : (isLocking ? <Lock size={16} /> : <Unlock size={16} />)}
-            Apply {isLocking ? 'Lock' : 'Unlock'} to "{lockMonth}"
+            {runningAction === 'toggleLock' ? (
+              <RefreshCw 
+                size={16} 
+                className="spin-animation" 
+                style={{ animation: 'spin 0.85s linear infinite' }}
+              />
+            ) : (
+              <RefreshCw size={16} />
+            )}
+            {runningAction === 'toggleLock' ? `Applying ${isLocking ? 'Lock' : 'Unlock'} to "${lockMonth}"...` : `Apply ${isLocking ? 'Lock' : 'Unlock'} to "${lockMonth}"`}
           </button>
         </div>
 

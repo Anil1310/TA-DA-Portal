@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-19T10:33:36.494Z",
+  "generatedAt": "2026-11-21T05:59:55.779Z",
   "primary": {
     "name": "Link-1 / MIS Admin & Bharti Portal",
     "scriptId": "1ouE8kYLKAbIi4vklT0v0uCOTJKG2UTeuhqaBpCc_dNJlDM1jdtzJYvCA",
-    "deploymentId": "AKfycbwu-yLTbOTk3f9ptXRP4zB2ORxZZ4285ol-TfTlYR6KkjdwvzSnNkAlRQUDXLrix8Sb",
+    "deploymentId": "AKfycbzVFMEJbzicH-8Euoe2k12ZizgFuGA1C6B7T9tZo9Y8yBGME0DWVGsyGW1cd9CHJkew",
     "devUrlDoctorSoap": "https://script.google.com/a/macros/doctorsoap.com/s/1ouE8kYLKAbIi4vklT0v0uCOTJKG2UTeuhqaBpCc_dNJlDM1jdtzJYvCA/dev",
     "devUrlStandard": "https://script.google.com/macros/s/1ouE8kYLKAbIi4vklT0v0uCOTJKG2UTeuhqaBpCc_dNJlDM1jdtzJYvCA/dev",
-    "execUrl": "https://script.google.com/macros/s/AKfycbwu-yLTbOTk3f9ptXRP4zB2ORxZZ4285ol-TfTlYR6KkjdwvzSnNkAlRQUDXLrix8Sb/exec",
+    "execUrl": "https://script.google.com/macros/s/AKfycbzVFMEJbzicH-8Euoe2k12ZizgFuGA1C6B7T9tZo9Y8yBGME0DWVGsyGW1cd9CHJkew/exec",
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1VkrqI6qCWhfLcPQcigJEQE9jkTwdbHkVVTGre0pHhDY/edit"
   },
   "secondary": {
