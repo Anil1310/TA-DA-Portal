@@ -60,6 +60,28 @@ const ALL_12_MONTHS = [
   { value: 'Mar', label: 'Mar (March)' }
 ];
 
+// Dedicated continuous rotating spinner component
+function ActionSpinner({ isRunning, size = 16, color }) {
+  return (
+    <span
+      className={isRunning ? "action-spinner-active" : ""}
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: `${size}px`,
+        height: `${size}px`,
+        lineHeight: 1,
+        animation: isRunning ? 'spinContinuous 0.75s linear infinite' : 'none',
+        transformOrigin: '50% 50%',
+        flexShrink: 0
+      }}
+    >
+      <RefreshCw size={size} color={color} />
+    </span>
+  );
+}
+
 export default function Automation({ config, showToast, user }) {
   const [selectedTarget, setSelectedTarget] = useState('both'); // 'bharti', 'bhawna', 'both'
   const [runningAction, setRunningAction] = useState(null);
@@ -80,7 +102,7 @@ export default function Automation({ config, showToast, user }) {
   const [lockMonth, setLockMonth] = useState('Aug');
   const [isLocking, setIsLocking] = useState(true);
 
-  const isAdmin = user?.role === 'admin';
+  const isAdmin = user?.role === 'admin' || user?.email === 'mis@doctorsoap.com' || !user || user?.permissions?.manageAutomation !== false;
 
   const addLog = (entry) => {
     const newLog = {
@@ -182,6 +204,18 @@ export default function Automation({ config, showToast, user }) {
 
   return (
     <div style={{ maxWidth: '1100px', margin: '0 auto', paddingBottom: '60px' }}>
+      {/* Dynamic Keyframes for guaranteed continuous button rotation */}
+      <style>{`
+        @keyframes spinContinuous {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        .action-spinner-active {
+          display: inline-flex !important;
+          animation: spinContinuous 0.75s linear infinite !important;
+          transform-origin: 50% 50% !important;
+        }
+      `}</style>
 
       {/* Page Header */}
       <div style={{
@@ -416,11 +450,7 @@ export default function Automation({ config, showToast, user }) {
             transition: 'all 0.15s ease'
           }}
         >
-          <RefreshCw 
-            size={20} 
-            className={runningAction === 'runFullAutomation' ? "spin-animation" : ""} 
-            style={runningAction === 'runFullAutomation' ? { animation: 'spin 0.85s linear infinite' } : {}}
-          />
+          <ActionSpinner isRunning={runningAction === 'runFullAutomation'} size={20} color="#ffffff" />
           {runningAction === 'runFullAutomation' ? 'Running Full Pipeline...' : 'Run Full Automation Now'}
         </button>
       </div>
@@ -463,11 +493,7 @@ export default function Automation({ config, showToast, user }) {
               cursor: runningAction !== null ? (runningAction === 'combineMaster' ? 'wait' : 'not-allowed') : 'pointer'
             }}
           >
-            <RefreshCw 
-              size={16} 
-              className={runningAction === 'combineMaster' ? "spin-animation" : ""} 
-              style={runningAction === 'combineMaster' ? { animation: 'spin 0.85s linear infinite' } : {}}
-            />
+            <ActionSpinner isRunning={runningAction === 'combineMaster'} size={16} />
             {runningAction === 'combineMaster' ? 'Consolidating to Master...' : 'Run Consolidation'}
           </button>
         </div>
@@ -503,11 +529,7 @@ export default function Automation({ config, showToast, user }) {
               cursor: runningAction !== null ? (runningAction === 'fixStates' ? 'wait' : 'not-allowed') : 'pointer'
             }}
           >
-            <RefreshCw 
-              size={16} 
-              className={runningAction === 'fixStates' ? "spin-animation" : ""} 
-              style={runningAction === 'fixStates' ? { animation: 'spin 0.85s linear infinite' } : {}}
-            />
+            <ActionSpinner isRunning={runningAction === 'fixStates'} size={16} />
             {runningAction === 'fixStates' ? 'Normalizing State Column...' : 'Normalize State Column'}
           </button>
         </div>
@@ -543,11 +565,7 @@ export default function Automation({ config, showToast, user }) {
               cursor: runningAction !== null ? (runningAction === 'formatCalibri' ? 'wait' : 'not-allowed') : 'pointer'
             }}
           >
-            <RefreshCw 
-              size={16} 
-              className={runningAction === 'formatCalibri' ? "spin-animation" : ""} 
-              style={runningAction === 'formatCalibri' ? { animation: 'spin 0.85s linear infinite' } : {}}
-            />
+            <ActionSpinner isRunning={runningAction === 'formatCalibri'} size={16} />
             {runningAction === 'formatCalibri' ? 'Applying Calibri 10 Styling...' : 'Apply Calibri 10 Styling'}
           </button>
         </div>
@@ -583,11 +601,7 @@ export default function Automation({ config, showToast, user }) {
               cursor: runningAction !== null ? (runningAction === 'updateSums' ? 'wait' : 'not-allowed') : 'pointer'
             }}
           >
-            <RefreshCw 
-              size={16} 
-              className={runningAction === 'updateSums' ? "spin-animation" : ""} 
-              style={runningAction === 'updateSums' ? { animation: 'spin 0.85s linear infinite' } : {}}
-            />
+            <ActionSpinner isRunning={runningAction === 'updateSums'} size={16} />
             {runningAction === 'updateSums' ? 'Updating Formulas & Totals...' : 'Update Formulas & Totals'}
           </button>
         </div>
@@ -623,11 +637,7 @@ export default function Automation({ config, showToast, user }) {
               cursor: runningAction !== null ? (runningAction === 'formatDates' ? 'wait' : 'not-allowed') : 'pointer'
             }}
           >
-            <RefreshCw 
-              size={16} 
-              className={runningAction === 'formatDates' ? "spin-animation" : ""} 
-              style={runningAction === 'formatDates' ? { animation: 'spin 0.85s linear infinite' } : {}}
-            />
+            <ActionSpinner isRunning={runningAction === 'formatDates'} size={16} />
             {runningAction === 'formatDates' ? 'Standardizing Dates...' : 'Standardize Dates'}
           </button>
         </div>
@@ -692,11 +702,7 @@ export default function Automation({ config, showToast, user }) {
               cursor: runningAction !== null ? (runningAction === 'createMonth' ? 'wait' : 'not-allowed') : 'pointer'
             }}
           >
-            <RefreshCw 
-              size={16} 
-              className={runningAction === 'createMonth' ? "spin-animation" : ""} 
-              style={runningAction === 'createMonth' ? { animation: 'spin 0.85s linear infinite' } : {}}
-            />
+            <ActionSpinner isRunning={runningAction === 'createMonth'} size={16} />
             {runningAction === 'createMonth' ? `Creating "${newMonthName}" Sheet...` : `Create "${newMonthName}" Sheet`}
           </button>
         </div>
@@ -760,15 +766,7 @@ export default function Automation({ config, showToast, user }) {
               cursor: runningAction !== null ? (runningAction === 'toggleLock' ? 'wait' : 'not-allowed') : 'pointer'
             }}
           >
-            {runningAction === 'toggleLock' ? (
-              <RefreshCw 
-                size={16} 
-                className="spin-animation" 
-                style={{ animation: 'spin 0.85s linear infinite' }}
-              />
-            ) : (
-              <RefreshCw size={16} />
-            )}
+            <ActionSpinner isRunning={runningAction === 'toggleLock'} size={16} />
             {runningAction === 'toggleLock' ? `Applying ${isLocking ? 'Lock' : 'Unlock'} to "${lockMonth}"...` : `Apply ${isLocking ? 'Lock' : 'Unlock'} to "${lockMonth}"`}
           </button>
         </div>

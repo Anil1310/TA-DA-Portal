@@ -1005,7 +1005,8 @@ export async function executeSheetAutomation(action, params = {}) {
   }
 
   // 3. Resilient simulated response for standalone Vite development preview
-  await new Promise((r) => setTimeout(r, 900));
+  // Gives visible rotating feedback while simulating cloud sheet operations
+  await new Promise((r) => setTimeout(r, 2200));
   const sheetName = params.spreadsheetId === '166GBY-ACppPT9vFccLK1UJFKzO4KxeTGXxpUSMsrG5w'
     ? 'Bhawna TA Master'
     : 'Bharti TA Master';
